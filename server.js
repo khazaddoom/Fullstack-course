@@ -5,16 +5,20 @@ let app = express();
 let db;
 
 let connectionString = 'mongodb+srv://ToDoAppUser:abc1234$$@cluster0-ixsd4.mongodb.net/MyTests?retryWrites=true&w=majority';
-mongodb.connect(connectionString, {
-  useNewUrlParser: true
-}, function(err, client) {
-  db = client.db();
-  console.log('successfully connected to db!');
-  // console.log(db)
-  app.listen(3000);
-});
+
+// mongodb.connect(connectionString, {
+//   useNewUrlParser: true
+// }, function(err, client) {
+//   db = client.db();
+//   console.log('successfully connected to db!');
+//   // console.log(db)
+//   app.listen(3000);
+// });
 
 app.use(express.urlencoded({extended: false}));
+
+
+
 
 app.get('/', function(req, res) {
 
@@ -84,4 +88,12 @@ app.post('/create-item', function(req, res) {
   }
  
   // res.send('Thank you for submitting the form!');   
+});
+
+app.listen(3000);
+
+app.get('/tournament/list', function(req, res) {
+  res.send({
+    name: 'Ganesh',
+  })
 });
