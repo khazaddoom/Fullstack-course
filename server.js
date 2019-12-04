@@ -4,11 +4,16 @@ let app = express();
 
 let db;
 
-let connectionString = 'mongodb+srv://ToDoAppUser:abc1234$$@cluster0-ixsd4.mongodb.net/MyTests?retryWrites=true&w=majority';
+let connectionString = 'mongodb+srv://ToDoAppUser:abcd1234$$@cluster0-ixsd4.mongodb.net/MyTests?retryWrites=true&w=majority';
 
 mongodb.connect(connectionString, {
   useNewUrlParser: true
 }, function(err, client) {
+
+  if(err) {
+    console.error(err);
+  }
+
   db = client.db();
   console.log('successfully connected to db!');
   // console.log(db)
