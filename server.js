@@ -2,9 +2,12 @@ let express = require('express');
 let mongodb = require('mongodb');
 let app = express();
 
+let router = require('./router')
+console.log(router)
+
 let db;
 
-let connectionString = 'mongodb+srv://ToDoAppUser:abcd1234$$@cluster0-ixsd4.mongodb.net/MyTests?retryWrites=true&w=majority';
+let connectionString = 'mongodb+srv://ToDoAppUser:31Dec1986$@cluster0-ixsd4.mongodb.net/MyTests?retryWrites=true&w=majority';
 
 mongodb.connect(connectionString, {
   useNewUrlParser: true
